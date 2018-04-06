@@ -5,7 +5,7 @@ package com.mcg.array;
  * 创建时间：2018/3/14
  * 给定一个数组[-1,3,0,-3,-5,1,4,6] 求最大连续和
  */
-public class MaxSum {
+public class MaxSubArray {
     /**
      * 普通实现
      * @param array
@@ -56,7 +56,7 @@ public class MaxSum {
 
     public static void main(String[] args) {
         int[] test = new int[]{-1, 3, 0, -3, -5, 1, 4, 6, -4, 10};
-        MaxSum maxSum = new MaxSum();
+        MaxSubArray maxSum = new MaxSubArray();
         System.out.println(maxSum.findMaxSumOfSubArray(test));
         System.out.println(maxSum.findMaxSumOfSubArray(test, test.length));
     }
