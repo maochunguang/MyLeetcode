@@ -1,5 +1,6 @@
-package com.mcg.simple;
+package com.mcg.integer;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -28,10 +29,12 @@ public class ReverseInt {
             n = -n;
             isPlus = false;
         }
-
         while (n > 0) {
             num = num * 10 + (n % 10);
             n = n / 10;
+        }
+        if (!isPlus){
+            num = -num;
         }
 
         return num > Integer.MAX_VALUE ? 0 : num;
@@ -65,16 +68,19 @@ public class ReverseInt {
 
     @Test
     public void testReverse() {
-        int a = 1234516789;
+        int a = 12345167;
         int b = 2333;
         int c = -123;
         int d = 0;
-        System.out.println(reverse(a));
-        System.out.println(reverse(b));
-        System.out.println(reverse(c));
-//        System.out.println(reverse2(a));
-//        System.out.println(reverse2(b));
-//        System.out.println(reverse2(c));
-//        System.out.println(reverse2(d));
+        Assert.assertEquals(reverse(a),76154321);
+        Assert.assertEquals(reverse(b),3332);
+        Assert.assertEquals(reverse(c),-321);
+        Assert.assertEquals(reverse(d),0);
+
+        Assert.assertEquals(reverse2(a),76154321);
+        Assert.assertEquals(reverse2(b),3332);
+        Assert.assertEquals(reverse2(c),-321);
+        Assert.assertEquals(reverse2(d),0);
+
     }
 }

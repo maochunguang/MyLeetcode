@@ -20,6 +20,8 @@ package com.mcg.linkednode;
  */
 public class IntersectLinkedNode {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        // TODO
+
         return null;
     }
 
