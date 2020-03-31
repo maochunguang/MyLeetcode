@@ -23,6 +23,12 @@ public class IntegerSwap {
 
     }
 
+    /**
+     * 方法二：使用加减法实现
+     *
+     * @param a
+     * @param b
+     */
     public void swapIntByAddOrSub(int a, int b) {
         a = a + b;
         b = a - b;

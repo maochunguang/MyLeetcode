@@ -10,6 +10,12 @@ import java.util.Arrays;
  * Description：TODO
  */
 public class TwoSum {
+    /**
+     * 穷举法
+     * @param nums
+     * @param target
+     * @return
+     */
     public int[] twoSum(int[] nums, int target) {
         int len = nums.length;
         for (int i = 0; i < len; i++) {
