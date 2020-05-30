@@ -1,4 +1,4 @@
-package com.mcg.swap;
+package com.mcg.integer;
 
 import org.junit.Test;
 

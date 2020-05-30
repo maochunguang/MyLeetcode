@@ -1,4 +1,4 @@
-package com.mcg.linkedlist;
+package com.mcg.linkednode;
 
 import org.junit.Test;
 
