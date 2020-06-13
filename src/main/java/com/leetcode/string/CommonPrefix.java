@@ -44,7 +44,7 @@ public class CommonPrefix {
 
     @Test
     public void test() {
-        String[] strs = {"flower", "flow", "flight"};
+        String[] strs = {"flower", "flo", "flowht","flowmmmm"};
         System.out.println(longestCommonPrefix(strs));
     }
 
