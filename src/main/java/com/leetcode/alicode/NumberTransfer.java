@@ -12,13 +12,7 @@ public class NumberTransfer {
     public final String[] chnUnitSection = new String[]{"", "万", "亿", "万亿"};
     public final String[] chnUnitChar = new String[]{"", "十", "百", "千"};
 
-    @Test
-    public void testNumberToChinese() {
-        int[] nums = new int[]{304, 4006, 4000, 10003, 10030, 21010011, 101101101};
-        for (int i = 0; i < nums.length; i++) {
-            System.out.println(numberToChinese(nums[i]));
-        }
-    }
+
 
     public String numberToChinese(int num) {
         String strIns;

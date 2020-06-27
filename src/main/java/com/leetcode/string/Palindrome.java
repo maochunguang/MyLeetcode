@@ -1,28 +1,50 @@
 package com.leetcode.string;
 
 
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * [9]判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
- *
- *  示例 1:
- *  输入: 121
- *  输出: true
- *
- *  示例 2:
- *  输入: -121
- *  输出: false
+ * <p>
+ * 示例 1:
+ * 输入: 121
+ * 输出: true
+ * <p>
+ * 示例 2:
+ * 输入: -121
+ * 输出: false
  * 解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。
- *
- *  示例 3:
- *  输入: 10
+ * <p>
+ * 示例 3:
+ * 输入: 10
  * 输出: false
  * 解释: 从右向左读, 为 01 。因此它不是一个回文数。
- *
- *  进阶:
- *  你能不将整数转为字符串来解决这个问题吗？
- *  Related Topics 数学
+ * <p>
+ * 进阶:
+ * 你能不将整数转为字符串来解决这个问题吗？
+ * Related Topics 数学
  */
 public class Palindrome {
+    /**
+     * 第一种方式，数字转为字符串判断
+     *
+     * @param num 输入整数
+     * @return 返回true false
+     */
+    public boolean isPalindrome1(int num) {
+        if (num < 0) {
+            return false;
+        }
+        char[] nums = String.valueOf(num).toCharArray();
+        int len = nums.length;
+        for (int i = 0; i < len/2; i++) {
+            if (nums[i] != nums[len - i - 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 }
