@@ -5,3 +5,6 @@ out/*
 .projec
 *.iml
 target/*
+gradle/*
+build/*
+.gradle/*
