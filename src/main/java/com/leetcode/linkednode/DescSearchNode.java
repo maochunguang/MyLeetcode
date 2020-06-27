@@ -1,7 +1,5 @@
 package com.leetcode.linkednode;
 
-import org.junit.Test;
-
 /**
  * @author maocg
  * Date：2018/3/23
@@ -33,16 +31,6 @@ public class DescSearchNode {
         }
         System.out.println("时间复杂度==" + step);
         return p2;
-    }
-
-    @Test
-    public void testFindDescEle() {
-        Node node = Node.createFakeNode();
-        System.out.println(findDescEle(node, 2).value);
-        System.out.println(findDescEle(node, 3).value);
-        System.out.println(findDescEle(node, 4).value);
-        System.out.println(findDescEle(node, 5).value);
-
     }
 
 }

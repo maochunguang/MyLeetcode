@@ -1,9 +1,6 @@
 package com.leetcode.string;
 
 
-import org.junit.Assert;
-import org.junit.Test;
-
 /**
  * [9]判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
  * <p>
@@ -28,6 +25,8 @@ import org.junit.Test;
 public class Palindrome {
     /**
      * 第一种方式，数字转为字符串判断
+     * 执行耗时:10 ms,击败了64.88% 的Java用户
+     * 内存消耗:39.1 MB,击败了5.14% 的Java用户
      *
      * @param num 输入整数
      * @return 返回true false
@@ -38,7 +37,7 @@ public class Palindrome {
         }
         char[] nums = String.valueOf(num).toCharArray();
         int len = nums.length;
-        for (int i = 0; i < len/2; i++) {
+        for (int i = 0; i < len / 2; i++) {
             if (nums[i] != nums[len - i - 1]) {
                 return false;
             }
@@ -46,5 +45,48 @@ public class Palindrome {
         return true;
     }
 
+    /**
+     * 第二种方案：整数除法,121
+     * 执行耗时:10 ms,击败了64.88% 的Java用户
+     * 内存消耗:39.2 MB,击败了5.14% 的Java用户
+     *
+     * @param x 整数
+     * @return true
+     */
+    public boolean isPalindrome2(int x) {
+        if (x < 0) {
+            return false;
+        }
+        int div = 1;
+        while (x / div >= 10) div = div * 10;
+        while (x > 0) {
+            int left = x / div;
+            int right = x % 10;
+            if (left != right) {
+                return false;
+            }
+            x = (x % div) / 10;
+            div = div / 100;
+        }
+        return true;
+    }
+
+    /**
+     * 第三种反转数字解法
+     * 执行耗时:9 ms,击败了98.85% 的Java用户
+     * 内存消耗:38.9 MB,击败了5.14% 的Java用户
+     *
+     * @param x
+     * @return
+     */
+    public boolean isPalindrome(int x) {
+        if (x < 0 || (x % 10 == 0 && x != 0)) return false;
+        int revertedNumber = 0;
+        while (x > revertedNumber) {
+            revertedNumber = revertedNumber * 10 + x % 10;
+            x /= 10;
+        }
+        return x == revertedNumber || x == revertedNumber / 10;
+    }
 
 }
