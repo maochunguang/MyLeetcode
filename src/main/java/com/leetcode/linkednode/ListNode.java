@@ -6,10 +6,10 @@ package com.leetcode.linkednode;
  * Description：TODO
  */
 public class ListNode {
-    private int val;
+    int value;
     ListNode next;
 
     ListNode(int x) {
-        val = x;
+        value = x;
     }
 }

@@ -11,9 +11,9 @@ import java.util.*;
  * Description：TODO
  */
 public class Solution {
+    private static final String pattern = "+";
     List<User> users = new ArrayList<User>();
     Map<String, User> userIdMap = new HashMap<String, User>();
-    private static final String parteen = "+";
 
     public List<User> findUserByCondition(Map<String, String> params, List<User> data) {
         if (data == null) {
@@ -66,8 +66,8 @@ public class Solution {
         for (int i = 0; i < users.size(); i++) {
             User user = users.get(i);
             HashSet set = new HashSet();
-            String[] address = user.getAddress().split(parteen);
-            String[] companyName = user.getAddress().split(parteen);
+            String[] address = user.getAddress().split(pattern);
+            String[] companyName = user.getAddress().split(pattern);
             for (int j = 0; j < address.length; j++) {
                 set.add(user.getUserId());
                 index.put(address[i], set);
