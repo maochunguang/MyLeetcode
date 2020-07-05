@@ -3,7 +3,7 @@ package com.leetcode.string;
 /**
  * @author maocg
  * Date：2018/4/7
- * Description：正则表达式匹配
+ * Description：【10】正则表达式匹配
  * 实现支持 '.' 和 '*' 的正则表达式匹配。
  * '.' 匹配任意单个字符。
  * '*' 匹配零个或多个前面的元素。

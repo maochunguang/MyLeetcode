@@ -5,7 +5,7 @@ import org.junit.Test;
 /**
  * @author maocg
  * Date：2018/4/6
- * Description：编写一个函数来查找字符串数组中最长的公共前缀字符串。
+ * Description：【14】编写一个函数来查找字符串数组中最长的公共前缀字符串。
  */
 public class CommonPrefix {
     /**
@@ -40,12 +40,6 @@ public class CommonPrefix {
             }
         }
         return min;
-    }
-
-    @Test
-    public void test() {
-        String[] strs = {"flower", "flo", "flowht","flowmmmm"};
-        System.out.println(longestCommonPrefix(strs));
     }
 
 }
