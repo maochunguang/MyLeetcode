@@ -3,7 +3,7 @@ package com.leetcode.string;
 /**
  * @author mao
  * Date：2020/7/31
- * Description：给定两个以字符串形式表示的非负整数 num1 和 num2，返回 num1 和 num2 的乘积，它们的乘积也表示为字符串形式。
+ * Description：【43】给定两个以字符串形式表示的非负整数 num1 和 num2，返回 num1 和 num2 的乘积，它们的乘积也表示为字符串形式。
  * <p>
  * 示例 1:
  * 输入: num1 = "2", num2 = "3"
