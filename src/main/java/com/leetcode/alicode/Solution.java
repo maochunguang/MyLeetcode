@@ -1,8 +1,5 @@
 package com.leetcode.alicode;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import java.util.*;
 
 /**
@@ -87,20 +84,6 @@ public class Solution {
         }
         return userIdMap;
     }
-
-    @Before
-    public List<User> createFakeData(List<User> data) {
-        for (int i = 0; i < users.size(); i++) {
-            //构造数据
-        }
-        return users;
-    }
-
-    @Test
-    public void testFindUserByCondition() {
-
-    }
-
 
 }
 
