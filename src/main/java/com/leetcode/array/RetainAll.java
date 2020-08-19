@@ -1,11 +1,13 @@
 package com.leetcode.array;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author mao
  * Date：2020/8/16
- * Description：
+ * Description：两个有序数组求交集
  */
 public class RetainAll {
     public static void main(String[] args) {
@@ -53,12 +55,21 @@ public class RetainAll {
         return -1;
     }
 
+    /**
+     * 使用异或运算符
+     *
+     * @param char1
+     * @param char2
+     * @return
+     */
     public static char find(char[] char1, char[] char2) {
+        int a = 0;
         for (char c : char1) {
-            if (Arrays.binarySearch(char2, c) < 0) {
-                return c;
-            }
+            a = a ^ c;
         }
-        return 0;
+        for (char c : char2) {
+            a = a ^ c;
+        }
+        return (char) (a);
     }
 }
