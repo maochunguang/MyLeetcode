@@ -1,5 +1,7 @@
 package com.leetcode.sort;
 
+import com.leetcode.utils.Swap;
+
 import java.util.Arrays;
 
 /**
@@ -38,7 +40,7 @@ public class QuickSort {
                 low++;
             }
             if (low < high) {
-                swap(a, low, high);
+                Swap.swapArr(a, low, high);
             }
         }
         a[left] = a[low];
@@ -47,9 +49,5 @@ public class QuickSort {
         return low;
     }
 
-    private static void swap(int[] a, int i, int j) {
-        int temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
-    }
+
 }
