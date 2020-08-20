@@ -1,5 +1,7 @@
 package com.leetcode.tree;
 
+import com.leetcode.utils.FakerData;
+
 import java.util.Stack;
 
 /**
@@ -8,7 +10,7 @@ import java.util.Stack;
 public class ZPrintTree {
     public static void main(String[] args) {
         System.out.println("start");
-        TreeNode treeNode = TreeNode.init();
+        TreeNode treeNode = FakerData.initTree();
         printTree(treeNode);
 
     }

@@ -1,5 +1,7 @@
 package com.leetcode.tree;
 
+import com.leetcode.utils.FakerData;
+
 import java.util.Stack;
 
 /**
@@ -9,9 +11,9 @@ import java.util.Stack;
  */
 public class BinaryTree {
     public static void main(String[] args) {
-        TreeNode treeNode = TreeNode.init();
+        TreeNode treeNode = FakerData.initTree();
         BinaryTree binaryTree = new BinaryTree();
-        binaryTree.preOrderTraverse2(treeNode);
+        binaryTree.preOrderTraverse1(treeNode);
     }
 
     /**

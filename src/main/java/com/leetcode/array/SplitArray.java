@@ -12,10 +12,11 @@ import java.util.Arrays;
 public class SplitArray {
     public static void main(String[] args) {
         SplitArray splitArray = new SplitArray();
-        int []arr = new int[]{4,6,7,8,11,3};
+        int[] arr = new int[]{1, 12, 4, 6, 7, 8};
         System.out.println(Arrays.toString(splitArray.splitOdd(arr)));
 
     }
+
     public int[] splitOdd(int[] arr) {
         if (arr == null || arr.length == 0) {
             return arr;
