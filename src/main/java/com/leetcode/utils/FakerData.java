@@ -46,6 +46,41 @@ public class FakerData {
                 curr.next = node;
             }
         }
+        System.out.print("原始链表：");
+        PrintHelper.printNode(head);
+        return head;
+    }
+    public static ListNode initDupNodeList(int len) {
+        Random random = new Random();
+//        int randomNum = random.nextInt(len);
+        ListNode head = new ListNode(0);
+        ListNode curr = head;
+        for (int i = 0; i < len - 1; i++) {
+            int randomNum = random.nextInt(len);
+            ListNode node = new ListNode(randomNum + i);
+            if (curr.next == null) {
+                curr.next = node;
+            } else {
+                while (curr.next != null) curr = curr.next;
+                curr.next = node;
+            }
+        }
+        System.out.print("原始链表：");
+        PrintHelper.printNode(head);
+        return head;
+    }
+
+    public static ListNode initNodeFromArr(int[] arr) {
+        ListNode head = new ListNode(0);
+        ListNode curr = head;
+        for (int value : arr) {
+            ListNode node = new ListNode(value);
+            if (curr.next != null) {
+                while (curr.next != null) curr = curr.next;
+            }
+            curr.next = node;
+        }
+        System.out.print("原始链表：");
         PrintHelper.printNode(head);
         return head;
     }
