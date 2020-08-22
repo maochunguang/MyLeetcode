@@ -24,7 +24,7 @@ public class BinaryTree {
      */
     public void preOrderTraverse1(TreeNode root) {
         if (root != null) {
-            System.out.println(root.value);
+            System.out.println(root.val);
             preOrderTraverse1(root.left);
             preOrderTraverse1(root.right);
         }
@@ -43,7 +43,7 @@ public class BinaryTree {
         TreeNode node = root;
         while (node != null || !stack.isEmpty()) {
             if (node != null) {
-                System.out.print(node.value + " -> ");
+                System.out.print(node.val + " -> ");
                 stack.push(node);
                 node = node.left;
             } else {

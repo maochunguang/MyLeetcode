@@ -3,10 +3,10 @@ package com.leetcode.tree;
 public class TreeNode {
     public TreeNode left;
     public TreeNode right;
-    public int value;
+    public int val;
 
-    public TreeNode(int value) {
-        this.value = value;
+    public TreeNode(int val) {
+        this.val = val;
     }
 
 }

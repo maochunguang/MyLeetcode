@@ -37,7 +37,7 @@ public class PrintHelper {
             if (node != null) {
                 while (!stack.isEmpty()) {
                     TreeNode printNode = stack.pop();
-                    System.out.print("  " + printNode.value + "  ");
+                    System.out.print("  " + printNode.val + "  ");
                 }
                 System.out.println();
                 if (node.left != null) {

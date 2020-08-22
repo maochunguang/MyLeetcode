@@ -30,7 +30,7 @@ public class ZPrintTree {
         while (!oddStack.isEmpty() || !evenStack.isEmpty()) {
             while (!oddStack.isEmpty()) {
                 tempTreeNode = oddStack.pop();
-                System.out.println(tempTreeNode.value + ", ");
+                System.out.println(tempTreeNode.val + ", ");
 
                 if (tempTreeNode.right != null) {
                     evenStack.push(tempTreeNode.right);
@@ -41,7 +41,7 @@ public class ZPrintTree {
             }
             while (!evenStack.isEmpty()) {
                 tempTreeNode = evenStack.pop();
-                System.out.println(tempTreeNode.value + ", ");
+                System.out.println(tempTreeNode.val + ", ");
                 if (tempTreeNode.left != null) {
                     oddStack.push(tempTreeNode.left);
                 }
