@@ -3,7 +3,8 @@ package com.leetcode.utils;
 import com.leetcode.linkednode.ListNode;
 import com.leetcode.tree.TreeNode;
 
-import java.util.Stack;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author mao
@@ -15,6 +16,7 @@ public class PrintHelper {
         TreeNode treeNode = FakerData.initTree();
         printTree(treeNode);
     }
+
     public static void printNode(ListNode node) {
         StringBuilder sb = new StringBuilder();
         while (node != null) {
@@ -29,28 +31,28 @@ public class PrintHelper {
     }
 
     public static void printTree(TreeNode root) {
-        Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
-        int level = 0;
-        TreeNode node = root;
-        while (node != null || !stack.isEmpty()) {
-            if (node != null) {
-                while (!stack.isEmpty()) {
-                    TreeNode printNode = stack.pop();
-                    System.out.print("  " + printNode.val + "  ");
-                }
-                System.out.println();
+        List<TreeNode> stack = new ArrayList<>();
+        stack.add(root);
+        List<List<Integer>> res = new ArrayList<>();
+        while (!stack.isEmpty()) {
+            int size = stack.size();
+            List<Integer> level = new ArrayList<>();
+
+            for (int i = 0; i < size; i++) {
+                TreeNode node = stack.remove(0);
+                level.add(node.val);
+
                 if (node.left != null) {
-                    stack.push(node.left);
+                    stack.add(node.left);
                 }
                 if (node.right != null) {
-                    stack.push(node.right);
+                    stack.add(node.right);
                 }
-            } else {
-                node = stack.pop();
-
             }
-
+            res.add(level);
         }
+
+        System.out.println(res.toString());
     }
+
 }
