@@ -42,10 +42,10 @@ public class DeleteDuplicateNode {
         ListNode pre = head;
         Set<Integer> nodeSet = new HashSet<>();
         while (cur != null) {
-            if (nodeSet.contains(cur.value)) {
+            if (nodeSet.contains(cur.val)) {
                 pre.next = cur.next;
             } else {
-                nodeSet.add(cur.value);
+                nodeSet.add(cur.val);
                 pre = cur;
             }
             cur = cur.next;
@@ -62,7 +62,7 @@ public class DeleteDuplicateNode {
     public ListNode deleteDuplicates1(ListNode head) {
         ListNode cur = head;
         while (cur != null && cur.next != null) {
-            if (cur.value == cur.next.value) {
+            if (cur.val == cur.next.val) {
                 cur.next = cur.next.next;
             } else {
                 cur = cur.next;

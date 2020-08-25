@@ -20,7 +20,7 @@ public class PrintHelper {
     public static void printNode(ListNode node) {
         StringBuilder sb = new StringBuilder();
         while (node != null) {
-            sb.append(node.value);
+            sb.append(node.val);
             if (node.next != null) {
                 sb.append("->");
             }
