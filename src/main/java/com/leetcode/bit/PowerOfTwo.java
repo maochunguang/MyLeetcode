@@ -39,4 +39,12 @@ public class PowerOfTwo {
         return (num > 0) && ((num & (num - 1)) == 0) && ((num & 0xaaaaaaaa) == 0);
     }
 
+    /**
+     * 3的幂
+     * @param n
+     * @return
+     */
+    public boolean isPowerOfThree(int n) {
+        return  false;
+    }
 }

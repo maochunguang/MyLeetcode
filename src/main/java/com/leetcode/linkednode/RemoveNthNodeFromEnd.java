@@ -21,7 +21,8 @@ public class RemoveNthNodeFromEnd {
      * 注意临界条件：
      * [1,2],1 删除最后一个，
      * [1]，1删除一个，变成空列表
-     * @param head 链表
+     *
+     * @param head    链表
      * @param n，倒数第n个
      * @return 返回链表
      */
@@ -39,5 +40,31 @@ public class RemoveNthNodeFromEnd {
         }
         second.next = second.next.next;
         return dummy.next;
+    }
+
+    /**
+     * 【203】移除指定val的链表节点
+     *
+     * @param head
+     * @param val
+     * @return
+     */
+    public ListNode removeElements(ListNode head, int val) {
+        if (head == null) {
+            return head;
+        }
+        ListNode preHeader = new ListNode(-1);
+        preHeader.next = head;
+        ListNode pre = preHeader;
+        ListNode cur = head;
+        while (cur != null) {
+            if (cur.val == val) {
+                pre.next = cur.next;
+            } else {
+                pre = cur;
+            }
+            cur = cur.next;
+        }
+        return preHeader.next;
     }
 }
