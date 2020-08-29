@@ -6,4 +6,5 @@ package com.leetcode.inacion;
  * Description：
  */
 public class ThreadsPrintV2 {
+
 }
