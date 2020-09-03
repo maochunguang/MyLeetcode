@@ -19,9 +19,29 @@ public class TreeDepth {
 
     }
 
+    public int minDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        if (root.left == null && root.right == null) {
+            return 1;
+        }
+
+        int minDepth = Integer.MAX_VALUE;
+        if (root.left != null) {
+            minDepth = Math.min(minDepth(root.left), minDepth);
+        }
+        if (root.right != null) {
+            minDepth = Math.min(minDepth(root.right), minDepth);
+        }
+
+        return minDepth + 1;
+    }
+
     public static void main(String[] args) {
         TreeDepth treeDepth = new TreeDepth();
-        TreeNode treeNode = FakerData.initTree();
+        TreeNode treeNode = FakerData.initNotBTree();
         System.out.println(treeDepth.maxDepth(treeNode));
+        System.out.println(treeDepth.minDepth(treeNode));
     }
 }

@@ -31,6 +31,18 @@ public class FakerData {
         // 返回根节点
         return root;
     }
+    public static TreeNode initNotBTree() {
+
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+//        root.left.left = new TreeNode(7);
+//        root.left.right = new TreeNode(6);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(4);
+        // 返回根节点
+        return root;
+    }
 
     public static ListNode initNodeList(int len) {
         Random random = new Random();
