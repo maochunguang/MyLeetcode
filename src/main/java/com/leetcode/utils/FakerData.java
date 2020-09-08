@@ -3,6 +3,7 @@ package com.leetcode.utils;
 import com.leetcode.linkednode.ListNode;
 import com.leetcode.tree.TreeNode;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -31,6 +32,7 @@ public class FakerData {
         // 返回根节点
         return root;
     }
+
     public static TreeNode initNotBTree() {
 
         TreeNode root = new TreeNode(1);
@@ -62,6 +64,7 @@ public class FakerData {
         PrintHelper.printNode(head);
         return head;
     }
+
     public static ListNode initDupNodeList(int len) {
         Random random = new Random();
 //        int randomNum = random.nextInt(len);
@@ -112,5 +115,17 @@ public class FakerData {
         l5.next = l3;
 //        PrintHelper.printNode(head);
         return head;
+    }
+
+    public static int[][] initMatrix(int m, int n) {
+        int[][] matrix = new int[m][n];
+        Random random = new Random();
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = random.nextInt((i + 1) * (j + 1));
+            }
+        }
+        System.out.println(Arrays.deepToString(matrix));
+        return matrix;
     }
 }
