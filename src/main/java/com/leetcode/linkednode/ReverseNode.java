@@ -30,4 +30,32 @@ public class ReverseNode {
         }
         return prev;
     }
+
+    /**
+     * 反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。
+     *
+     * 说明:
+     * 1 ≤ m ≤ n ≤ 链表长度。
+     *
+     * 示例:
+     *
+     * 输入: 1->2->3->4->5->NULL, m = 2, n = 4
+     * 输出: 1->4->3->2->5->NULL
+     * @param head 头结点
+     * @param m 开始
+     * @param n 结束
+     * @return
+     */
+    public ListNode reverseBetween(ListNode head, int m, int n) {
+        ListNode prev = null;
+        ListNode cur = head;
+        int index = 1;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = prev;
+            prev =cur;
+            cur =next;
+        }
+        return prev;
+    }
 }
