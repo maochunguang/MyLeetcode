@@ -39,17 +39,29 @@ public class Kthsmallest {
     public static void main(String[] args) {
         Kthsmallest kthsmallest = new Kthsmallest();
         TreeNode treeNode = FakerData.initBSTree();
-        System.out.println(kthsmallest.kthSmallest(treeNode,3));
-        System.out.println(kthsmallest.kthSmallest(treeNode,2));
-        System.out.println(kthsmallest.kthSmallest(treeNode,4));
+        System.out.println(kthsmallest.kthSmallest(treeNode, 3));
+        System.out.println(kthsmallest.kthSmallest(treeNode, 2));
+        System.out.println(kthsmallest.kthSmallest(treeNode, 4));
+        System.out.println(kthsmallest.kthLargest(treeNode, 1));
+        System.out.println(kthsmallest.kthLargest(treeNode, 2));
+        System.out.println(kthsmallest.kthLargest(treeNode, 3));
 
     }
+
     public int kthSmallest(TreeNode root, int k) {
         List<Integer> res = new ArrayList<>();
-        inOrderHelper(root,res);
-        return res.get(k-1);
+        inOrderHelper(root, res);
+        System.out.println(res);
+        return res.get(k - 1);
     }
-    public void inOrderHelper(TreeNode root,List<Integer> res) {
+
+    public int kthLargest(TreeNode root, int k) {
+        List<Integer> res = new ArrayList<>();
+        inOrderHelper(root, res);
+        return res.get(res.size() - k);
+    }
+
+    public void inOrderHelper(TreeNode root, List<Integer> res) {
         if (root != null) {
             if (root.left != null) {
                 inOrderHelper(root.left, res);
