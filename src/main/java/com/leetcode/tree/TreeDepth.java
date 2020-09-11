@@ -19,6 +19,24 @@ public class TreeDepth {
 
     }
 
+    /**
+     * 一棵二叉树，求最大通路长度。（即最大左右子树高度之和）
+     * @return 高度和
+     */
+    public int maxDepthSum(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int left = maxDepthSum(root.left);
+        int right = maxDepthSum(root.right);
+        return left + right + 1;
+    }
+
+    /**
+     * 求二叉树的最小高度
+     * @param root
+     * @return
+     */
     public int minDepth(TreeNode root) {
         if (root == null) {
             return 0;
@@ -43,5 +61,6 @@ public class TreeDepth {
         TreeNode treeNode = FakerData.initNotBTree();
         System.out.println(treeDepth.maxDepth(treeNode));
         System.out.println(treeDepth.minDepth(treeNode));
+        System.out.println(treeDepth.maxDepthSum(treeNode));
     }
 }
