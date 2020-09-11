@@ -38,6 +38,11 @@ public class CycleNode {
         return false;
     }
 
+    /**
+     * 使用set存储
+     * @param head
+     * @return
+     */
     private boolean hashSolution(ListNode head) {
         if (head == null || head.next == null)
             return false;
