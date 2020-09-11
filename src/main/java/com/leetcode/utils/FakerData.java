@@ -4,6 +4,7 @@ import com.leetcode.linkednode.ListNode;
 import com.leetcode.tree.TreeNode;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Random;
 
 /**
@@ -32,14 +33,21 @@ public class FakerData {
         // 返回根节点
         return root;
     }
+
+    /**
+     *          7
+     *        5   9
+     *      3  6 8 10
+     * @return
+     */
     public static TreeNode initBSTree() {
 
         TreeNode root = new TreeNode(7);
         root.left = new TreeNode(5);
         root.right = new TreeNode(9);
         root.left.left = new TreeNode(3);
-        root.left.right = new TreeNode(8);
-        root.right.left = new TreeNode(4);
+        root.left.right = new TreeNode(6);
+        root.right.left = new TreeNode(8);
         root.right.right = new TreeNode(10);
         // 返回根节点
         PrintHelper.printTree(root);
