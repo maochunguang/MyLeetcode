@@ -4,7 +4,6 @@ import com.leetcode.linkednode.ListNode;
 import com.leetcode.tree.TreeNode;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Random;
 
 /**
@@ -70,9 +69,9 @@ public class FakerData {
     public static ListNode initNodeList(int len) {
         Random random = new Random();
         int randomNum = random.nextInt(len);
-        ListNode head = new ListNode(0);
+        ListNode head = new ListNode(1);
         ListNode curr = head;
-        for (int i = 0; i < len - 1; i++) {
+        for (int i = 1; i < len; i++) {
             ListNode node = new ListNode(randomNum + i);
             if (curr.next == null) {
                 curr.next = node;
@@ -107,10 +106,10 @@ public class FakerData {
     }
 
     public static ListNode initNodeFromArr(int[] arr) {
-        ListNode head = new ListNode(0);
+        ListNode head = new ListNode(arr[0]);
         ListNode curr = head;
-        for (int value : arr) {
-            ListNode node = new ListNode(value);
+        for (int i = 1; i < arr.length; i++) {
+            ListNode node = new ListNode(arr[i]);
             if (curr.next != null) {
                 while (curr.next != null) curr = curr.next;
             }
