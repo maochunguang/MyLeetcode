@@ -85,4 +85,42 @@ public class Permutation {
             used[i] = false;
         }
     }
+
+    public List<List<Integer>> permuteDfsUnique(int[] nums) {
+
+        List<List<Integer>> res = new ArrayList<>();
+        if (nums.length == 0) {
+            return res;
+        }
+        //后面剪枝需要按排序的顺序
+        Arrays.sort(nums);
+        int len = nums.length;
+        Deque<Integer> stack = new ArrayDeque<>();
+        int depth = 0;
+        boolean[] used = new boolean[len];
+        dfs(res, used, depth, stack, len, nums);
+        return res;
+    }
+
+    private void dfsUnique(List<List<Integer>> res, boolean[] used, int depth, Deque<Integer> stack, int len, int[] nums) {
+        if (depth == len) {
+            res.add(new ArrayList<>(stack));
+            return;
+        }
+        for (int i = 0; i < len; i++) {
+            if (used[i]) {
+                continue;
+            }
+            //剪枝条件判断：
+            if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) {
+                continue;
+            }
+
+            stack.addLast(nums[i]);
+            used[i] = true;
+            dfsUnique(res, used, depth + 1, stack, len, nums);
+            stack.removeLast();
+            used[i] = false;
+        }
+    }
 }
